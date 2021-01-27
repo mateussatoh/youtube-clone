@@ -1,18 +1,15 @@
 import React from 'react';
-import Head from 'next/head';
 import { Button } from '@material-ui/core';
+
+import Layout from '../components/Layout/index';
 
 export default function Home() {
   return (
-    <>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <Layout>
       <h1>Youtube Clone</h1>
       <Button variant="contained" color="primary">
         Primary
       </Button>
-    </>
+    </Layout>
   );
 }
