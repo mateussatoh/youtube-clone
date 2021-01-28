@@ -19,6 +19,9 @@ import {
   AccountCircle,
 } from '@material-ui/icons';
 
+import Link from 'next/link';
+import Image from 'next/image';
+
 import useStyles from './styles';
 
 const Topbar = () => {
@@ -26,14 +29,16 @@ const Topbar = () => {
   return (
     <AppBar className={classes.root} color="default">
       <Toolbar className={classes.toolbar}>
-        <Box display="flex" alignItems="center">
-          <Menu />
-          <img
-            src="/yt_logo_rgb_light.png"
-            alt="logo"
-            className={classes.logo}
-          />
-        </Box>
+        <Link href="/">
+          <Box display="flex" alignItems="center">
+            <Menu />
+            <img
+              src="/yt_logo_rgb_light.png"
+              alt="logo"
+              className={classes.logo}
+            />
+          </Box>
+        </Link>
 
         <Box>
           <Paper component="form" className={classes.search}>

@@ -1,6 +1,6 @@
 import { Hidden, Drawer, Box, Divider } from '@material-ui/core';
 
-import { MainMenu, UserMenu, SignupMenu } from './NavbarElements';
+import { MainMenu, UserMenu, SignupMenu } from './elements';
 
 import useStyles from './styles';
 

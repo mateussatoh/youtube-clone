@@ -2,8 +2,8 @@ import Head from 'next/head';
 
 import { makeStyles } from '@material-ui/core';
 
-import Topbar from './Topbar/Topbar';
-import Navbar from './Navbar/Navbar';
+import Topbar from './Topbar';
+import Navbar from './Navbar';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -50,7 +50,6 @@ const Layout = ({ children }) => {
             <div className={classes.content}>{children}</div>
           </div>
         </div>
-        <div>{children}</div>
       </div>
     </>
   );
