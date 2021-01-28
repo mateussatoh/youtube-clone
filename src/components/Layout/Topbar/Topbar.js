@@ -1,5 +1,4 @@
 import {
-  makeStyles,
   AppBar,
   Toolbar,
   Box,
@@ -8,6 +7,7 @@ import {
   IconButton,
   Button,
   Hidden,
+  Divider,
 } from '@material-ui/core';
 
 import {
@@ -19,37 +19,7 @@ import {
   AccountCircle,
 } from '@material-ui/icons';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    boxShadow: 'none',
-    zIndex: theme.zIndex.drawer + 1,
-    backgroundColor: theme.palette.background.default,
-  },
-  toolbar: {
-    minHeight: 56,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-  },
-  logo: {
-    cursor: 'pointer',
-    height: 18,
-    marginLeft: theme.spacing(3),
-  },
-  search: {
-    padding: '2px 6px 0px 15px',
-    display: 'flex',
-    alignItems: 'center',
-
-    borderRadius: 0,
-
-    height: 35,
-    width: 600,
-  },
-  input: {
-    flex: 1,
-  },
-}));
+import useStyles from './styles';
 
 const Topbar = () => {
   const classes = useStyles();
@@ -72,7 +42,14 @@ const Topbar = () => {
               placeholder="Pesquisar"
               inputProps={{ 'aria-label': 'search google maps' }}
             />
-            <IconButton type="submit" aria-label="search">
+            <Divider orientation="vertical" flexItem />
+
+            <IconButton
+              type="submit"
+              aria-label="search"
+              className={classes.button}
+              backgroundColor="rgb(0,0,0)"
+            >
               <Search />
             </IconButton>
           </Paper>
