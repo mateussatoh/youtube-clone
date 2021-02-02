@@ -26,19 +26,20 @@ import useStyles from './styles';
 
 const Topbar = () => {
   const classes = useStyles();
+
   return (
     <AppBar className={classes.root} color="default">
       <Toolbar className={classes.toolbar}>
-        <Link href="/">
-          <Box display="flex" alignItems="center">
-            <Menu />
+        <Box display="flex" alignItems="center">
+          <Menu button />
+          <Link href="/">
             <img
               src="/yt_logo_rgb_light.png"
               alt="logo"
               className={classes.logo}
             />
-          </Box>
-        </Link>
+          </Link>
+        </Box>
 
         <Box>
           <Paper component="form" className={classes.search}>

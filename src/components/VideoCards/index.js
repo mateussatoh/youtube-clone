@@ -1,6 +1,4 @@
-import { Box, Grid, Avatar, Typography } from '@material-ui/core';
-
-import Image from 'next/image';
+import { Grid } from '@material-ui/core';
 
 import Card from './Card';
 

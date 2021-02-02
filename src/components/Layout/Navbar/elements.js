@@ -18,6 +18,7 @@ import {
 } from '@material-ui/icons';
 
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import useStyles from './styles';
 
@@ -39,6 +40,8 @@ const secondaryMenu = [
 
 export const MainMenu = () => {
   const classes = useStyles();
+  const router = useRouter();
+
   return (
     <>
       <List>
@@ -46,9 +49,15 @@ export const MainMenu = () => {
           const Icon = item.icon;
           return (
             <Link href={item.path}>
-              <ListItem classes={{ root: classes.listItem }} button>
+              <ListItem
+                classes={{ root: classes.listItem }}
+                button
+                selected={router.pathname === item.path ? 1 : 0}
+              >
                 <ListItemIcon>
-                  <Icon />
+                  <Icon
+                    color={router.pathname === item.path ? 'primary' : ''}
+                  />
                 </ListItemIcon>
                 <ListItemText
                   primary={item.label}
@@ -67,6 +76,7 @@ export const MainMenu = () => {
 
 export const UserMenu = () => {
   const classes = useStyles();
+  const router = useRouter();
   return (
     <>
       <List>
@@ -74,9 +84,15 @@ export const UserMenu = () => {
           const Icon = item.icon;
           return (
             <Link href={item.path}>
-              <ListItem classes={{ root: classes.listItem }} button>
+              <ListItem
+                classes={{ root: classes.listItem }}
+                button
+                selected={router.pathname === item.path ? 1 : 0}
+              >
                 <ListItemIcon>
-                  <Icon />
+                  <Icon
+                    color={router.pathname === item.path ? 'primary' : ''}
+                  />
                 </ListItemIcon>
                 <ListItemText
                   primary={item.label}
