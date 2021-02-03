@@ -2,12 +2,18 @@ import { Grid, Box, Avatar, Typography } from '@material-ui/core';
 import Image from 'next/image';
 import useStyles from './styles';
 
-const Card = () => {
+const Card = ({ property }) => {
+  const { snippet } = property;
   const classes = useStyles();
   return (
     <Grid item xl={3} lg={3} md={4} sm={6} xs={12}>
       <Box>
-        <Image src="/hq720.webp" height={145} width={255} quality={100} />
+        <Image
+          src={snippet.thumbnails.maxres.url}
+          height={145}
+          width={255}
+          quality={100}
+        />
       </Box>
       <Box
         display="flex"
@@ -19,11 +25,9 @@ const Card = () => {
           <Avatar className={classes.avatar} src="/unnamed.jpg" />
         </Box>
         <Box>
-          <Typography className={classes.caption}>
-            Fizemos a BOLA de LÁPIS DE COR PERFEITA!
-          </Typography>
+          <Typography className={classes.caption}>{snippet.title}</Typography>
           <Typography className={classes.description}>
-            Manual do Mundo
+            {snippet.channelTitle}
           </Typography>
           <Typography className={classes.description}>
             1,5 mi de visualizações
