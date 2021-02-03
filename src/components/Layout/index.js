@@ -9,9 +9,9 @@ const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.background.dark,
     display: 'flex',
-    height: '100vh',
+    height: 'auto',
     overflow: 'hidden',
-    width: '100vw',
+    width: 'auto',
   },
 
   wrapper: {

@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   img: {
     width: '100%',
   },
@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
   caption: {
     fontWeight: '500',
     fontSize: 14,
-    marginBottom: '5px',
+    marginBottom: 'px',
     color: 'black',
 
     display: '-webkit-box',
