@@ -19,6 +19,7 @@ export async function getServerSideProps() {
   const videos = await popularVideos.json();
 
   const snippetArray = await videos.items.map(({ snippet }) => snippet);
+
   const channelIdArray = await snippetArray.map(({ channelId }) => channelId);
   const channelIdString = await channelIdArray.toString();
 

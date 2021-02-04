@@ -12,7 +12,7 @@ const useStyles = makeStyles(() => ({
   caption: {
     fontWeight: '500',
     fontSize: 14,
-    marginBottom: 'px',
+    marginBottom: '5px',
     color: 'black',
 
     display: '-webkit-box',
