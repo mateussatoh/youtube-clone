@@ -14,7 +14,7 @@ export default function Home({ videos, channel }) {
 export async function getServerSideProps() {
   const apiKey = process.env.GOOGLE_API_KEY;
   const popularVideos = await fetch(
-    `https://youtube.googleapis.com/youtube/v3/videos?part=snippet&maxResults=15&chart=mostPopular&regionCode=br&videoCategoryId=2&key=${apiKey}`,
+    `https://youtube.googleapis.com/youtube/v3/videos?part=snippet,statistics&maxResults=50&chart=mostPopular&regionCode=br&videoCategoryId=1&key=${apiKey}`,
   );
   const videos = await popularVideos.json();
 
