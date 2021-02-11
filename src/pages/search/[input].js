@@ -1,11 +1,11 @@
 import Layout from '../../components/Layout/index';
 import SearchCards from '../../components/SearchCards';
 
-export default function Home({ search }) {
+export default function Home({ search, channel }) {
   return (
     <>
       <Layout>
-        <SearchCards searchedVideos={search} />
+        <SearchCards searchedVideos={search} searchedChannel={channel} />
       </Layout>
     </>
   );
@@ -20,7 +20,19 @@ export async function getServerSideProps(context) {
   );
   const search = await searchVideos.json();
 
+
+  const snippetArray = await search.items.map(({ snippet }) => snippet);
+
+  const channelIdArray = await snippetArray.map(({ channelId }) => channelId);
+  const channelIdString = await channelIdArray.toString();
+
+  const channelId = await fetch(
+    `https://youtube.googleapis.com/youtube/v3/channels?part=snippet&id=${channelIdString}&key=${apiKey}`,
+  );
+  const channel = await channelId.json();
+  
+    
   return {
-    props: { search },
+    props: { search, channel },
   };
 }

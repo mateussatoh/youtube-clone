@@ -1,21 +1,19 @@
 import { Grid, Box, Avatar, Typography } from '@material-ui/core';
 import Image from 'next/image';
-import dayjs from 'dayjs'
-import locale from 'dayjs/locale/pt-br'
-import relativeTime from 'dayjs/plugin/relativeTime'
+import dayjs from 'dayjs';
+import locale from 'dayjs/locale/pt-br';
+import relativeTime from 'dayjs/plugin/relativeTime';
 import useStyles from './styles';
 
 const Card = ({ property }) => {
-  dayjs.extend(relativeTime)
-  dayjs.locale('pt-br') 
-  
+  dayjs.extend(relativeTime);
+  dayjs.locale('pt-br');
+
   const { snippet } = property;
   const { statistics } = property;
   const thumbnail = snippet.thumbnails;
   const avatar = snippet.channelThumb;
-  const day = dayjs(snippet.publishedAt).fromNow()
-
-  
+  const day = dayjs(snippet.publishedAt).fromNow();
 
   const formatViews = () => {
     const charViews = statistics.viewCount;
@@ -30,7 +28,7 @@ const Card = ({ property }) => {
       format = `${charViews.charAt(0)}${charViews.charAt(1)}${charViews.charAt(
         2,
       )} mi de visualizações`;
-    } else if (length ===8) {
+    } else if (length === 8) {
       format = `${charViews.charAt(0)}${charViews.charAt(
         1,
       )} mi de visualizações`;
@@ -64,6 +62,7 @@ const Card = ({ property }) => {
     <Grid item xl={3} lg={3} md={4} sm={6} xs={12}>
       <Box>
         <Image
+          objectFit="cover"
           src={
             thumbnail.maxres
               ? thumbnail.maxres.url
@@ -73,8 +72,8 @@ const Card = ({ property }) => {
               ? thumbnail.high.url
               : thumbnail.medium.url
           }
-          height={145}
-          width={255}
+          height={135}
+          width={240}
           quality={100}
         />
       </Box>

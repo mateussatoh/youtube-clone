@@ -3,10 +3,11 @@ import Image from 'next/image';
 import useStyles from './styles';
 
 const Card = ({ property }) => {
+  
   const { snippet } = property;
-
-  const avatar = snippet.channelThumb;
   const thumbnail = snippet.thumbnails;
+ 
+  
 
   const classes = useStyles();
   return (
@@ -35,10 +36,9 @@ const Card = ({ property }) => {
         maxWidth="230px"
       >
         <Box>
-          <Avatar 
-          className={classes.avatar}
-          src={avatar.high ? avatar.high.url : avatar.medium.url}
-           />
+          <Avatar
+            className={classes.avatar}
+          />
         </Box>
         <Box>
           <Typography className={classes.caption}>{snippet.title}</Typography>
