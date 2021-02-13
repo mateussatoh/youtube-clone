@@ -1,11 +1,34 @@
 import Layout from '../../components/Layout/index';
+import VideoCards from '../../components/VideoCards';
 
-const Trending = () => {
+export default function Home({ videos, channel }) {
   return (
     <>
-      <Layout />
+      <Layout>
+        <VideoCards popularVideos={videos} popularChannels={channel} />
+      </Layout>
     </>
   );
-};
+}
 
-export default Trending;
+export async function getServerSideProps() {
+  const apiKey = process.env.GOOGLE_API_KEY;
+
+  const popularVideos = await fetch(
+    `https://youtube.googleapis.com/youtube/v3/videos?part=snippet,statistics&maxResults=20&chart=mostPopular&regionCode=br&key=${apiKey}`,
+  );
+  const videos = await popularVideos.json();
+
+  const snippetArray = await videos.items.map(({ snippet }) => snippet);
+
+  const channelIdArray = await snippetArray.map(({ channelId }) => channelId);
+  const channelIdString = await channelIdArray.toString();
+  const channelId = await fetch(
+    `https://youtube.googleapis.com/youtube/v3/channels?part=snippet&id=${channelIdString}&key=${apiKey}`,
+  );
+  const channel = await channelId.json();
+
+  return {
+    props: { videos, channel },
+  };
+}

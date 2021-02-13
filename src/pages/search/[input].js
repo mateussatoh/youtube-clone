@@ -20,7 +20,7 @@ export async function getServerSideProps(context) {
   const path = context.params.input;
 
   const searchVideos = await fetch(
-    `https://youtube.googleapis.com/youtube/v3/search?part=snippet%2Cid&q=${path}&maxResults=48&type=video&key=${apiKey}`,
+    `https://youtube.googleapis.com/youtube/v3/search?part=snippet%2Cid&q=${path}&maxResults=20&type=video&key=${apiKey}`,
   );
   const search = await searchVideos.json();
 
