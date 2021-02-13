@@ -1,7 +1,6 @@
 import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
-
   avatar: {
     width: '38px',
     height: '38px',

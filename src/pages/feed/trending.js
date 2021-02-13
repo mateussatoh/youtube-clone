@@ -1,5 +1,11 @@
 import Layout from '../../components/Layout/index';
 
-export default function Trending() {
-  return <Layout />;
-}
+const Trending = () => {
+  return (
+    <>
+      <Layout />
+    </>
+  );
+};
+
+export default Trending;

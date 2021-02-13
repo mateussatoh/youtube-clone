@@ -16,7 +16,7 @@ const VideoCards = ({
   const statisticsItemsMap = statisticsItems.map((item) => item);
   const statisticsIdResponse = statisticsItems.map((item) => item.id);
 
-  const appItems = searchItems.map((item, index) => {
+  const appItems = searchItems.map((item) => {
     const channelPosition = channelIdResponse.indexOf(item.snippet.channelId);
     const statisticsPosition = statisticsIdResponse.indexOf(item.id.videoId);
 

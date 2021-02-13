@@ -20,7 +20,7 @@ export async function getServerSideProps(context) {
   const path = context.params.input;
 
   const searchVideos = await fetch(
-    `https://youtube.googleapis.com/youtube/v3/search?part=snippet%2Cid&q=${path}&maxResults=50&type=video&key=${apiKey}`,
+    `https://youtube.googleapis.com/youtube/v3/search?part=snippet%2Cid&q=${path}&maxResults=48&type=video&key=${apiKey}`,
   );
   const search = await searchVideos.json();
 
@@ -37,7 +37,7 @@ export async function getServerSideProps(context) {
   const videoIdArray = await idArray.map(({ videoId }) => videoId);
   const videoIdString = await videoIdArray.toString();
   const videoStatistics = await fetch(
-    `https://youtube.googleapis.com/youtube/v3/videos?part=statistics&maxResults=50&regionCode=br&id=${videoIdString}&key=${apiKey}`,
+    `https://youtube.googleapis.com/youtube/v3/videos?part=statistics&regionCode=br&id=${videoIdString}&key=${apiKey}`,
   );
   const statistics = await videoStatistics.json();
 

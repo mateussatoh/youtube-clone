@@ -20,20 +20,19 @@ import {
 } from '@material-ui/icons';
 
 import Link from 'next/link';
-import Image from 'next/image';
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
 
 import useStyles from './styles';
 
 const Topbar = () => {
-  const router = useRouter()
+  const router = useRouter();
   const classes = useStyles();
 
   const handleSubmit = (event) => {
-    const input = event.target.input.value
-    event.preventDefault()
-    router.push( router.pathname === '/' ? `search/${input}` : `${input}` )
-  }
+    const input = event.target.input.value;
+    event.preventDefault();
+    router.push(router.pathname === '/' ? `search/${input}` : `${input}`);
+  };
 
   return (
     <AppBar className={classes.root} color="default">
@@ -50,9 +49,13 @@ const Topbar = () => {
         </Box>
 
         <Box>
-          <Paper component="form" className={classes.search} onSubmit={handleSubmit}>
+          <Paper
+            component="form"
+            className={classes.search}
+            onSubmit={handleSubmit}
+          >
             <InputBase
-            name='input'
+              name="input"
               className={classes.input}
               placeholder="Pesquisar"
               inputProps={{ 'aria-label': 'search google maps' }}

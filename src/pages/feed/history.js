@@ -1,5 +1,11 @@
 import Layout from '../../components/Layout/index';
 
-export default function History() {
-  return <Layout />;
-}
+const History = () => {
+  return (
+    <>
+      <Layout />
+    </>
+  );
+};
+
+export default History;

@@ -1,5 +1,11 @@
 import Layout from '../../components/Layout/index';
 
-export default function Library() {
-  return <Layout />;
-}
+const Library = () => {
+  return (
+    <>
+      <Layout />
+    </>
+  );
+};
+
+export default Library;

@@ -9,10 +9,8 @@ const VideoCards = ({ popularVideos, popularChannels }) => {
 
   const channelPosition = channelItems.map((item) => item.id);
 
-  const appItems = videoItems.map((item, index) => {
+  const appItems = videoItems.map((item) => {
     const position = channelPosition.indexOf(item.snippet.channelId);
-    // channelPosition = array estático dos channelsIds da página inicial
-    // position = index da resposta dos CANAIS no array dos VIDEOS
 
     item.snippet.channelThumb = channelItemsMap[position].snippet.thumbnails;
     return item;
