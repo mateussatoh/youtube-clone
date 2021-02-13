@@ -1,22 +1,30 @@
 import { Grid } from '@material-ui/core';
 import Card from './Card';
 
-const VideoCards = ({ searchedVideos, searchedChannel }) => {
+const VideoCards = ({
+  searchedVideos,
+  searchedChannel,
+  searchedStatistics,
+}) => {
   const searchItems = searchedVideos.items;
 
   const channelItems = searchedChannel.items;
   const channelItemsMap = channelItems.map((item) => item);
-  const channelPosition = channelItems.map((item) => item.id);
+  const channelIdResponse = channelItems.map((item) => item.id);
+
+  const statisticsItems = searchedStatistics.items;
+  const statisticsItemsMap = statisticsItems.map((item) => item);
+  const statisticsIdResponse = statisticsItems.map((item) => item.id);
 
   const appItems = searchItems.map((item, index) => {
-    const position = channelPosition.indexOf(item.snippet.channelId);
-    // channelPosition = array estático dos channelsIds da página inicial
-    // position = index da resposta dos CANAIS no array dos VIDEOS
+    const channelPosition = channelIdResponse.indexOf(item.snippet.channelId);
+    const statisticsPosition = statisticsIdResponse.indexOf(item.id.videoId);
 
-    item.snippet.channelThumb = channelItemsMap[position].snippet.thumbnails;
+    item.snippet.statistics = statisticsItemsMap[statisticsPosition].statistics;
+    item.snippet.channelThumb =
+      channelItemsMap[channelPosition].snippet.thumbnails;
     return item;
   });
-
 
   return (
     <Grid container>

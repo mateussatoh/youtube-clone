@@ -6,9 +6,7 @@ const Card = ({ property }) => {
   
   const { snippet } = property;
   const thumbnail = snippet.thumbnails;
- 
   
-
   const classes = useStyles();
   return (
     <Grid item xl={3} lg={3} md={4} sm={6} xs={12}>

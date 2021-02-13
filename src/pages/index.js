@@ -13,6 +13,7 @@ export default function Home({ videos, channel }) {
 
 export async function getServerSideProps() {
   const apiKey = process.env.GOOGLE_API_KEY;
+
   const popularVideos = await fetch(
     `https://youtube.googleapis.com/youtube/v3/videos?part=snippet,statistics&maxResults=50&chart=mostPopular&regionCode=br&videoCategoryId=1&key=${apiKey}`,
   );
@@ -22,7 +23,6 @@ export async function getServerSideProps() {
 
   const channelIdArray = await snippetArray.map(({ channelId }) => channelId);
   const channelIdString = await channelIdArray.toString();
-
   const channelId = await fetch(
     `https://youtube.googleapis.com/youtube/v3/channels?part=snippet&id=${channelIdString}&key=${apiKey}`,
   );
