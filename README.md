@@ -1,34 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center"> ▶️ youtube-clone</h1>
 
-## Getting Started
+<h3 align="center">Clone da homepage do youtube em tempo real</h3>
 
-First, run the development server:
+<p align="center">
+  <a href="#techs">Sobre</a> &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
+  <a href="#techs">Tecnologias</a> &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; 
+  <a href="#learn">O que eu aprendi</a>
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+</p>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<br>
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+<br>
 
-## Learn More
+<h2 id="techs">👀 Sobre </h2>
 
-To learn more about Next.js, take a look at the following resources:
+Réplica da homepage do YouTube, usando [NextJS](https://nextjs.org/) e implementando a API oficial do Google com informações atualizadas dos vídeos em tempo real.
+<br>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+A página possui as funcionalidades de pesquisa implementadas, e todos os dados são renderizados por SSR (Server-Side rendering) minimizando o "peso" da página no client e otimizando o seu SEO (Search Engine Optimization). 
+<br>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+O objetivo do projeto é o de aprender as diversas aplicações do NextJS em aplicações web e os seus limites de implementação e você pode acessa-lo por [aqui](https://youtube-clone.mateussatoh.vercel.app/)
 
-## Deploy on Vercel
+<strong>OBS: Projeto em constante desenvolvimento. 🧬 </strong>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<br>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<h2 id="techs">🚀 Tecnologias </h2>
+
+- [NextJS](https://nextjs.org/)
+- [MaterialUI](https://material-ui.com/pt/)
+- [DayJS](https://day.js.org/)
+
+
+<br>
+
+<h2 id="learn">🤔 O que eu aprendi</h2>
+
+- Configuração inicial de um projeto usando [Prettier](https://prettier.io/), [ESlint](https://eslint.org/) e [EditorConfig](https://editorconfig.org/)
+- NextJS (Pages, Data Fetching, Image Optimization, ENV variables, Routing, API Routes)
+- Ambiente de deploy da [Vercel](https://vercel.com/)
+- MaterialUI (Icons & Styles)
+- Construção de uma API
+- Rotas dinânicas 
+
+<br>
+
+
+👋 Made by Mateus Satoh. 
+[Get in touch!](https://www.linkedin.com/in/mateussatoh/)
