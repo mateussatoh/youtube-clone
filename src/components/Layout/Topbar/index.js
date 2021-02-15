@@ -24,14 +24,18 @@ import { useRouter } from 'next/router';
 
 import useStyles from './styles';
 
+import verifyPathname from '../../../functions/verifyPathname';
+
 const Topbar = () => {
   const router = useRouter();
   const classes = useStyles();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
+    const { pathname } = router;
     const input = event.target.input.value;
+    const adress = await verifyPathname(pathname, input);
     event.preventDefault();
-    router.push(router.pathname === '/' ? `search/${input}` : `${input}`);
+    router.push(adress);
   };
 
   return (
