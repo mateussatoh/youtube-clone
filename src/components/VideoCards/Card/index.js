@@ -25,32 +25,22 @@ const Card = ({ property }) => {
   const views = formatViews(statistics);
 
   const classes = useStyles();
+
   return (
     <Grid item xl={3} lg={3} md={4} sm={6} xs={12}>
-      <Box>
+      <Box paddingRight="15px">
         <Image
           objectFit="cover"
           src={image}
           height={135}
           width={240}
+          layout="responsive"
           quality={100}
         />
       </Box>
-      <Box
-        display="flex"
-        paddingTop="12px"
-        paddingBottom="24px"
-        maxWidth="230px"
-      >
+      <Box display="flex" paddingTop="12px" paddingBottom="24px">
         <Box>
-          <Avatar
-            className={classes.avatar}
-            src={
-              channelThumb.high
-                ? channelThumb.high.url
-                : channelThumb.medium.url
-            }
-          />
+          <Avatar className={classes.avatar} src={channelThumb.default.url} />
         </Box>
         <Box>
           <Typography className={classes.caption}>{snippet.title}</Typography>
